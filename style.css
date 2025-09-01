@@ -1,0 +1,738 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    width: 100%;
+}
+
+/*------- COVER ------------*/
+.big-wrapper {
+    padding: 15px 0 15px;
+    background-color: #dfdcda;
+    width: 100%;
+    min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative; 
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #57078e;
+    font-size: 24px;
+}
+
+.logo a span{
+    color: #00ffef;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    padding: 8px 12px;
+    position: relative;
+    display: inline-block;
+
+}
+
+.nav-links ul li a{
+    color: rgba(0, 0, 0, 0.8);
+    transition: 0.5s;
+}
+
+.nav-links ul li a:hover {
+    color: #57078e;
+}
+
+
+.text-box {
+    align-items: center;
+    justify-content: center;
+    background-position: bottom;
+    background-size: cover;
+    color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text-box h1{
+    font-size: 350%;
+    margin: 10px 0 25px;
+    color: #57078e;
+}
+
+.text-box p {
+    font-size: 20px;
+    margin: 10px 0 15px;
+}
+
+.line {
+    width: 300px;
+    height: 2px;
+    background: #57078e;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.btn {
+    display: inline-block;
+    color: #57078e;
+    border: 2px solid #57078e;
+    padding: 12px 34px;
+    font-size: 18px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.btn:hover{
+    border: 1px solid #57078e;
+    background: #57078e;
+    transition: 1s;
+    color: white;
+}
+
+.fa-bars {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+    display: none;
+}
+nav .fa-solid {
+    display: none;
+}
+
+@media screen and (max-width:720px){
+    .text-box h1 {
+        font-size: 25px;
+    }
+    .text-box p {
+        font-size: 15px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links{
+        position: fixed;
+        top: 0;
+        right: -200px; /* Inicialmente fora da tela */
+        width: 200px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: right 0.3s ease;
+    }
+    nav .fa-solid {
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul {
+        padding: 30px;
+    }
+}
+
+/* Impede a rolagem da página quando o menu estiver aberto */
+body.menu-open {
+    overflow: hidden;
+}
+
+.menu-open .fa-bars{
+    display: none;
+}
+
+.cards {
+    max-width: 1280px;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.card {
+    flex-basis: 30%;
+    padding: 60px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    max-height: 468px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+}
+
+.h3-card {
+    font-weight: 600;
+    margin: 16px 0;
+    font-size: 100%;
+}
+
+.p-card {
+    font-size: 90%;
+    font-weight: 300;
+    margin-bottom: 16px;
+    max-width: 240px;
+}
+
+.card {
+    box-shadow: 0 0 20px 0px rgba(20, 20, 20, 0.2);
+}
+
+@media screen and (max-width: 720px){
+
+    .row {
+        flex-direction: column; /* Empilha os cards verticalmente */
+        align-items: center; /* Centraliza os cards */
+    }
+
+    .card {
+        flex-basis: 90%; /* Ocupa 90% da largura da tela */
+        max-height: auto; /* Remove o limite de altura fixa */
+        padding: 40px 16px; /* Ajusta o padding para telas menores */
+        margin-bottom: 20px; /* Adiciona espaçamento entre os cards */
+    }
+
+    .icon {
+        width: 48px; /* Reduz o tamanho do ícone */
+        height: 48px;
+    }
+
+    .h3-card {
+        font-size: 90%; /* Ajusta o tamanho da fonte */
+    }
+
+    .p-card {
+        font-size: 85%; /* Ajusta o tamanho da fonte para texto */
+        max-width: 100%; /* Permite que o texto ocupe toda a largura disponível */
+    }
+}
+
+.grid-container {
+    max-width: 1280px;
+    margin: auto;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.h1-title {
+    text-align: center;
+    font-size: 45px;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.h1-title span {
+    color: #57078e;
+    text-decoration: underline;
+}
+
+.grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 1100px;
+    padding-top: 30px;
+}
+
+.box{
+    min-height: 320px;
+    width: 350px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 6px;
+    box-shadow: 0px 15px 25px rgba(20, 20, 20, 0.2);
+}
+
+.box .two-line-box{
+    width: 525px;
+}
+.box .fa-solid{
+    display: block;
+    font-size: 40px;
+    margin: 25px;
+    color: #57078e;
+}
+
+.box h2{
+    text-align: center;
+    font-weight: 550;
+    margin-bottom: 13px;
+    font-size: 21px;
+}
+
+.box p{
+    text-align: center;
+    margin-bottom: 17px;
+    font-weight: 300;
+    max-width: 250px;
+}
+
+.box a{
+    text-align:center
+}
+
+.box:hover{
+    background-color: #57078e;
+}
+
+.box:hover .fa-solid{
+    color: white;
+}
+
+.box:hover .a-ver-mais{
+    border-bottom: 2px solid white;
+}
+.a-ver-mais{
+    color: black;
+    font-weight: 300;
+    display: inline-block;
+    border-bottom: 2px solid #57078e;
+    padding-bottom: 5px;
+}
+
+@media screen and (max-width: 720px){
+    .grid-container {
+        padding-top: 50px;
+    }
+
+    .p-subtitle {
+        font-size: 16px;
+    }
+
+    .h1-title {
+        font-size: 30px;
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .box {
+        width: 90%; /* Ajusta a largura da caixa para caber na tela menor */
+        margin: 10px 0;
+    }
+
+    .box .two-line-box {
+        width: 100%;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    .box .fa-solid {
+        font-size: 30px;
+    }
+}
+
+/*-------- Sobre ---------*/
+
+.container{
+    max-width: 1280px;
+    margin: auto;
+    padding: 100px 0 100px 0;
+}
+
+.container .p-subtitle{
+    margin: 10px 0 35px 0;
+}
+
+.estrutura-container{
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.img-sobre{
+    width: 55%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.sobre{
+    flex: 1;
+    padding: 40px 0;
+}
+
+.sobre p{
+    margin-bottom: 20px;
+}
+
+
+.sobre h1{
+    text-align: left;
+    color: #57078e;
+}
+
+.p-frase {
+    text-align: center;
+    font-size: 28px;
+    margin: 35px 0 0 0;
+}
+
+.p-frase span {
+    color: #57078e;
+}
+
+@media screen and (max-width: 720px){
+    .container {
+        padding: 50px 20px;
+    }
+
+    .estrutura-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .img-sobre {
+        width: 90%; /* Ajusta a largura para telas menores */
+    }
+
+    .sobre {
+        padding: 20px 0;
+    }
+
+    .sobre h1, 
+    .sobre h2 {
+        text-align: center; /* Centraliza títulos em telas menores */
+    }
+
+    .p-frase {
+        font-size: 20px; /* Reduz tamanho da fonte */
+        margin: 20px 0;
+    }
+
+    .sobre-topicos {
+        flex-direction: column; /* Alinha os tópicos verticalmente */
+        align-items: center;
+    }
+
+    .sobre-topicos i {
+        font-size: 20px; /* Ajusta o tamanho do ícone */
+    }
+}
+
+/*-------- ENTRE EM CONTATO ---------*/
+
+.contato-background {
+    position: relative;
+    height: 100vh;
+    background-color: #dfdcda;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 0px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    width: 100%;
+    max-width: 700px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.form-container p{
+    padding: 5px;
+}
+
+.form-container input,
+.form-container textarea, .form-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 0px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f2f2f2;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #57078e;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-container button:hover {
+    background-color: #57078e;
+}
+
+@media (max-width: 720px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .form-container h2 {
+        font-size: 20px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+        font-size: 14px;
+    }
+
+    .form-container button {
+        font-size: 14px;
+    }
+}
+
+/*-------- FOOTER ---------*/
+
+footer {
+    background-color: #57078e;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-container .logo a{
+    color: white;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact-location {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.footer-contact-location p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.footer-social-icons {
+    margin-top: 20px;
+}
+
+.footer-social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+}
+
+.footer-social-icons a:hover {
+    color: #00ffef;
+}
+
+.footer-rights {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+@media (max-width: 720px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links, .footer-contact-location {
+        text-align: center;
+    }
+}
+
+/*-------- FORMAÇÃO ---------*/
+.section-about-four{
+    background-color: #57078e;
+    padding: 80px 0;
+    margin-top: 100px;
+}
+
+.section-about-four p{
+    color: white;
+}
+
+.section-about-four h1{
+    color: white;
+}
+
+.grid-about{
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 0 auto;
+    padding: 30px 0 0;
+}
+
+.box-about{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.box-about:hover {
+    transform: scale(1.05);
+}
+
+.box-about p{
+    text-align: center;
+}
+
+.box-about i{
+    font-size: 35px;
+    color: #00ffef;
+}
+
+.about-line{
+    width: 200px; 
+    height: 2px;
+    background: #00ffef;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 720px) {
+    /* Section About Two */
+    .section-about-two {
+        flex-direction: column; /* Alinha os elementos verticalmente */
+        gap: 20px; /* Reduz o espaçamento entre os elementos */
+        padding-top: 50px; /* Ajusta o espaçamento superior */
+        align-items: center;
+    }
+
+    .about-text .h1-title {
+        text-align: center; /* Centraliza o título */
+    }
+
+    .about-text p {
+        font-size: 18px; /* Reduz o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Section About Three */
+    .section-about-three {
+        padding-top: 50px; /* Reduz o espaçamento superior */
+    }
+
+    /* Section About Four */
+    .grid-about {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para duas colunas */
+        gap: 20px; /* Aumenta o espaçamento entre os itens */
+        padding: 20px 0; /* Ajusta o padding */
+    }
+
+    .box-about i {
+        font-size: 28px; /* Ajusta o tamanho dos ícones */
+    }
+
+    .box-about p {
+        font-size: 16px; /* Ajusta o tamanho da fonte */
+    }
+
+    .about-line {
+        width: 150px; /* Reduz a largura da linha */
+    }
+}
